@@ -1,0 +1,71 @@
+<mat-sidenav-container *ngIf="show()" class="sidenav-container" [ngClass]="{'expanded': openedSideBar}">
+    <mat-sidenav opened #sidenav class="example-sidenav" mode="side" [ngClass]="{'expanded': openedSideBar}"
+        (mouseenter)="openedSideBar = true" (mouseleave)="openedSideBar = false">
+
+        <div class="justyfyUser">
+            <img src="https://portfolio-caaws-public.s3.us-east-1.amazonaws.com/images/porfolio/Profile.png"
+                alt="User avatar" class="avatar-icon">
+            <span *ngIf="openedSideBar" class="username">Cristhian Del Castillo</span>
+        </div>
+
+        <div class="menus">
+            <ul>
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/angular/curriculum"
+                        routerLinkActive="active-link">
+                        <mat-icon>description</mat-icon>
+                        <span *ngIf="openedSideBar">Curriculum (Angular)</span>
+                    </a>
+                </li>
+
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/angular/to-do"
+                        routerLinkActive="active-link">
+                        <mat-icon>checklist</mat-icon>
+                        <span *ngIf="openedSideBar">ToDo (Angular)</span>
+                    </a>
+                </li>
+
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" (click)="getApp()"
+                        routerLinkActive="active-link">
+                        <mat-icon>phone_iphone</mat-icon>
+                        <span *ngIf="openedSideBar">App (Ionic)</span>
+                    </a>
+                </li>
+                
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/react/product/list"
+                        routerLinkActive="active-link">
+                        <mat-icon>shopping_bag</mat-icon>
+                        <span *ngIf="openedSideBar">Store (React)</span>
+                    </a>
+                </li>
+
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/react/weather"
+                        routerLinkActive="active-link">
+                        <mat-icon>cloud</mat-icon>
+                        <span *ngIf="openedSideBar">Climate (React)</span>
+                    </a>
+                </li>
+
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/react/tracking"
+                        routerLinkActive="active-link">
+                        <mat-icon>directions_car</mat-icon>
+                        <span *ngIf="openedSideBar">Tracking (React)</span>
+                    </a>
+                </li>
+
+                <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" (click)="goToPWA()"
+                        routerLinkActive="active-link">
+                        <mat-icon>devices</mat-icon>
+                        <span *ngIf="openedSideBar">PWA (React)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </mat-sidenav>
+</mat-sidenav-container>

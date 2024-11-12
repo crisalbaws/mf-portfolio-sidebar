@@ -1,0 +1,140 @@
+.sidenav-container {
+    height: 93vh;
+    overflow-y: hidden;
+    width: 60px;
+    margin-left: 5px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    /* Transición suave en ancho y color */
+}
+
+.example-sidenav {
+    width: 60px;
+    background-color: rgb(65 128 145);
+    /* Color inicial */
+    transition: width 0.3s ease, background-color 0.3s ease;
+    /* Transición para el ancho y color */
+    color: #FCFBFC;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+/* Estado expandido con transición suave */
+.example-sidenav.expanded {
+    width: 230px;
+    background-color: rgb(24, 81, 95);
+    /* Color final al expandirse */
+}
+
+.sidenav-container.expanded {
+    width: 230px;
+}
+
+.menus {
+    overflow: hidden;
+}
+
+.menus ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menus li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.menus li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    width: 100%;
+    margin-left: 10px;
+    height: 40px;
+}
+
+.noJust {
+    justify-content: start !important;
+    padding-left: 15px;
+}
+
+.menus li a:hover {
+    background-color: #fcfbfc43;
+    border-radius: 5px;
+}
+
+/* Estilo para active-link, sobreescribe el fondo solo si no está en hover */
+.menus li a.active-link:not(:hover) {
+    background-color: #fcfbfc43;
+    border-radius: 5px;
+}
+
+/* Cambia el color del icono y el texto cuando se aplica active-link */
+.menus li a.active-link mat-icon {
+    color: rgb(24, 81, 95);
+}
+
+.menus li a.active-link span {
+    color: rgb(24, 81, 95);
+}
+
+.menus mat-icon {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #FCFBFC;
+}
+
+.menus span {
+    font-weight: bold;
+    color: #FCFBFC;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: opacity 0.3s ease;
+}
+
+.menus span:hover {
+    opacity: 0.8;
+}
+
+.justyfy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justyfyUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.username {
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.avatar-icon {
+    width: 50px;
+    height: 45px;
+    border-radius: 50px;
+    object-fit: contain;
+}
