@@ -31,7 +31,7 @@ export class SidebarComponent {
     return !isCV;
   }
   goToPWA(){
-    window.open('https://crisalbaws.github.io/pwa-portfolio/?#/login');
+    window.open('https://crisalbaws.github.io/ticket-todo-managment/');
   }
   getApp(){
     window.open('https://portfolio-caaws-public.s3.us-east-1.amazonaws.com/apps/porfolio/ionicDemo.apk');

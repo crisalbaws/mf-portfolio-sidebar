@@ -11,6 +11,14 @@
         <div class="menus">
             <ul>
                 <li [ngClass]="{'justyfy': !openedSideBar}">
+                    <a [ngClass]="{'noJust': openedSideBar}" (click)="goToPWA()"
+                        routerLinkActive="active-link">
+                        <mat-icon>devices</mat-icon>
+                        <span *ngIf="openedSideBar">NEW!!! PWA (React)</span>
+                    </a>
+                </li>
+
+                <li [ngClass]="{'justyfy': !openedSideBar}">
                     <a [ngClass]="{'noJust': openedSideBar}" routerLink="/angular/curriculum"
                         routerLinkActive="active-link">
                         <mat-icon>description</mat-icon>
@@ -55,14 +63,6 @@
                         routerLinkActive="active-link">
                         <mat-icon>directions_car</mat-icon>
                         <span *ngIf="openedSideBar">Tracking (React)</span>
-                    </a>
-                </li>
-
-                <li [ngClass]="{'justyfy': !openedSideBar}">
-                    <a [ngClass]="{'noJust': openedSideBar}" (click)="goToPWA()"
-                        routerLinkActive="active-link">
-                        <mat-icon>devices</mat-icon>
-                        <span *ngIf="openedSideBar">PWA (React)</span>
                     </a>
                 </li>
             </ul>
