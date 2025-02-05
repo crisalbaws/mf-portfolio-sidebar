@@ -29,14 +29,15 @@ export class SidebarComponent {
   logout() {
     this.router.navigate(['/login']);
   }
-  show(): boolean {
+  hidden(): boolean {
     let isCV = this.router.url.includes('/angular/curriculum');
-
     if (isCV) {
       this.openedSideBar = false;
     }
-
-    return isCV || !this.isLargeScreen$;
+    else {
+      this.openedSideBar = true;
+    }
+    return isCV;
   }
   goToPWA() {
     window.open('https://crisalbaws.github.io/ticket-todo-managment/');
