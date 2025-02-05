@@ -1,4 +1,5 @@
-<mat-sidenav-container *ngIf="show()" class="sidenav-container" [ngClass]="{'expanded': openedSideBar}">
+<mat-sidenav-container [hidden]="!show()" *ngIf="this.isLargeScreen$ | async" class="sidenav-container"
+    [ngClass]="{'expanded': openedSideBar}">
     <mat-sidenav opened #sidenav class="example-sidenav" mode="side" [ngClass]="{'expanded': openedSideBar}"
         (mouseenter)="openedSideBar = true" (mouseleave)="openedSideBar = false">
 
@@ -11,8 +12,7 @@
         <div class="menus">
             <ul>
                 <li [ngClass]="{'justyfy': !openedSideBar}">
-                    <a [ngClass]="{'noJust': openedSideBar}" (click)="goToPWA()"
-                        routerLinkActive="active-link">
+                    <a [ngClass]="{'noJust': openedSideBar}" (click)="goToPWA()" routerLinkActive="active-link">
                         <mat-icon>devices</mat-icon>
                         <span *ngIf="openedSideBar">NEW!!! PWA (React)</span>
                     </a>
@@ -27,21 +27,19 @@
                 </li>
 
                 <li [ngClass]="{'justyfy': !openedSideBar}">
-                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/angular/to-do"
-                        routerLinkActive="active-link">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/angular/to-do" routerLinkActive="active-link">
                         <mat-icon>checklist</mat-icon>
                         <span *ngIf="openedSideBar">ToDo (Angular)</span>
                     </a>
                 </li>
 
                 <li [ngClass]="{'justyfy': !openedSideBar}">
-                    <a [ngClass]="{'noJust': openedSideBar}" (click)="getApp()"
-                        routerLinkActive="active-link">
+                    <a [ngClass]="{'noJust': openedSideBar}" (click)="getApp()" routerLinkActive="active-link">
                         <mat-icon>phone_iphone</mat-icon>
                         <span *ngIf="openedSideBar">App (Ionic)</span>
                     </a>
                 </li>
-                
+
                 <li [ngClass]="{'justyfy': !openedSideBar}">
                     <a [ngClass]="{'noJust': openedSideBar}" routerLink="/react/product/list"
                         routerLinkActive="active-link">
@@ -51,8 +49,7 @@
                 </li>
 
                 <li [ngClass]="{'justyfy': !openedSideBar}">
-                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/react/weather"
-                        routerLinkActive="active-link">
+                    <a [ngClass]="{'noJust': openedSideBar}" routerLink="/react/weather" routerLinkActive="active-link">
                         <mat-icon>cloud</mat-icon>
                         <span *ngIf="openedSideBar">Climate (React)</span>
                     </a>

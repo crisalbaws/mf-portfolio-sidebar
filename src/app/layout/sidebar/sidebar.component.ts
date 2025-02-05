@@ -6,6 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,7 +18,11 @@ import { MatMenuModule } from '@angular/material/menu';
 })
 export class SidebarComponent {
   openedSideBar: boolean = false;
-  constructor(private router: Router) { }
+  isLargeScreen$: Observable<boolean>;
+  constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
+    this.isLargeScreen$ = this.breakpointObserver.observe([Breakpoints.Large, Breakpoints.Medium])
+    .pipe(map(result => result.matches));
+  }
   changePassword() {
     this.router.navigate(['/change-password']);
   }
@@ -30,10 +36,10 @@ export class SidebarComponent {
     }
     return !isCV;
   }
-  goToPWA(){
+  goToPWA() {
     window.open('https://crisalbaws.github.io/ticket-todo-managment/');
   }
-  getApp(){
+  getApp() {
     window.open('https://portfolio-caaws-public.s3.us-east-1.amazonaws.com/apps/porfolio/ionicDemo.apk');
   }
 }
