@@ -1,4 +1,4 @@
-<mat-sidenav-container [hidden]="!show()" *ngIf="this.isLargeScreen$ | async" class="sidenav-container"
+<mat-sidenav-container [hidden]="show()" *ngIf="this.isLargeScreen$ | async" class="sidenav-container"
     [ngClass]="{'expanded': openedSideBar}">
     <mat-sidenav opened #sidenav class="example-sidenav" mode="side" [ngClass]="{'expanded': openedSideBar}"
         (mouseenter)="openedSideBar = true" (mouseleave)="openedSideBar = false">
