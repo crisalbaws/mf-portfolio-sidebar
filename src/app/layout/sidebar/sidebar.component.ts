@@ -21,7 +21,9 @@ export class SidebarComponent {
   isLargeScreen$: Observable<boolean>;
   constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
     this.isLargeScreen$ = this.breakpointObserver.observe([Breakpoints.Large, Breakpoints.Medium])
-      .pipe(map(result => result.matches));
+      .pipe(map(result => {
+        return result.matches
+      }));
   }
   changePassword() {
     this.router.navigate(['/change-password']);
@@ -29,7 +31,7 @@ export class SidebarComponent {
   logout() {
     this.router.navigate(['/login']);
   }
-  hidden(): boolean {
+  isCurriculum() {
     let isCV = this.router.url.includes('/angular/curriculum');
     if (isCV) {
       this.openedSideBar = false;
