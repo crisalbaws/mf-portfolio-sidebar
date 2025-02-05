@@ -21,7 +21,7 @@ export class SidebarComponent {
   isLargeScreen$: Observable<boolean>;
   constructor(private router: Router, private breakpointObserver: BreakpointObserver) {
     this.isLargeScreen$ = this.breakpointObserver.observe([Breakpoints.Large, Breakpoints.Medium])
-    .pipe(map(result => result.matches));
+      .pipe(map(result => result.matches));
   }
   changePassword() {
     this.router.navigate(['/change-password']);
@@ -30,11 +30,13 @@ export class SidebarComponent {
     this.router.navigate(['/login']);
   }
   show(): boolean {
-    let isCV = this.router.url.includes('curriculum');
+    let isCV = this.router.url.includes('/angular/curriculum');
+
     if (isCV) {
       this.openedSideBar = false;
     }
-    return !isCV;
+
+    return isCV || !this.isLargeScreen$;
   }
   goToPWA() {
     window.open('https://crisalbaws.github.io/ticket-todo-managment/');
