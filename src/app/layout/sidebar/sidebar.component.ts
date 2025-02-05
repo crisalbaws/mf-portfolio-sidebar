@@ -33,12 +33,6 @@ export class SidebarComponent {
   }
   isCurriculum() {
     let isCV = this.router.url.includes('/angular/curriculum');
-    if (isCV) {
-      this.openedSideBar = false;
-    }
-    else {
-      this.openedSideBar = true;
-    }
     return isCV;
   }
   goToPWA() {
